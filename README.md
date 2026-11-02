@@ -50,7 +50,7 @@ Three pieces:
 - Text chat, named timers with tap-to-stop, local fast lane for simple questions
 - Smart-home scenes via Home Assistant; recipes where you cook
 - Security cameras via go2rtc; native Plex client; YouTube casting via a built-in DIAL receiver
-- Live TV: the host merges IPTV catalogs + guide data into one searchable local snapshot every few hours, so browsing/search/favourites are instant and survive provider hiccups. HDHomeRun over-the-air channels can be merged the same way (advanced pattern, documented in the guides)
+- Live TV: the host merges IPTV catalogs + guide data into one searchable local snapshot every few hours, so browsing/search/favourites are instant and survive provider hiccups. A second IPTV provider and an over-the-air tuner have since been merged into the same snapshot in the reference build (provider-labelled categories, namespaced IDs per source), so the multi-source pattern is production-validated, not just a design — tuner channels ship without guide data for now, and the motion-smoothness fix for their transcodes still awaits its on-device eye check (see the guides)
 - Optional on-device wake word, trained on your own voice, with honestly measured detection/false-wake trade-offs
 - App updates pushed from the host — the Portal never has to install anything itself (its own installer UI doesn't work for sideloaded apps; the guides explain)
 

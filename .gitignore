@@ -1,0 +1,23 @@
+# Secrets and runtime state — never commit these
+.api_token
+*.keystore
+chat_inbox.json
+chat_reply.json
+chat_history.jsonl
+app_version.json
+app.apk
+*.apk
+*.idsig
+
+# Build / tooling junk
+__pycache__/
+*.pyc
+build/
+.gradle/
+local.properties
+
+# Logs and editor files
+*.log
+.DS_Store
+.idea/
+.vscode/

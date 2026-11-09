@@ -49,7 +49,7 @@ Three pieces:
 - **Streaming voice**: replies start playing in seconds, live captions for both sides, a status pill that tells the truth (Portal has no echo cancellation, so it's half-duplex — interrupt by wake word or tap)
 - Text chat, named timers with tap-to-stop, local fast lane for simple questions
 - Smart-home scenes via Home Assistant; recipes where you cook
-- Security cameras via go2rtc; native Plex client; YouTube casting via a built-in DIAL receiver
+- Security cameras via go2rtc (with a host watchdog that reloads the dashboard if a camera tile wedges); native Plex client (subtitles, double-tap seek); YouTube casting via a built-in DIAL receiver
 - Live TV: the host merges IPTV catalogs + guide data into one searchable local snapshot every few hours, so browsing/search/favourites are instant and survive provider hiccups. A second IPTV provider and an over-the-air tuner have since been merged into the same snapshot in the reference build (provider-labelled categories, namespaced IDs per source), so the multi-source pattern is production-validated, not just a design — tuner channels ship without guide data for now, and the motion-smoothness fix for their transcodes still awaits its on-device eye check (see the guides)
 - Optional on-device wake word, trained on your own voice, with honestly measured detection/false-wake trade-offs
 - App updates pushed from the host — the Portal never has to install anything itself (its own installer UI doesn't work for sideloaded apps; the guides explain)
@@ -74,7 +74,7 @@ Three pieces:
 ## Honest limitations
 
 - YouTube is the casting ceiling — DRM services (Netflix etc.) need certified receivers, which this hardware can't be.
-- Portal's ADB connection may switch off on reboot (model-dependent); one wired reconnection revives it.
+- Portal's ADB connection may switch off on reboot — and can also drop without one (model-dependent); a one-minute wired reconnection revives it.
 - Voice will sometimes mishear; anything important also gets an on-screen button.
 - It's a home-network appliance by design. Nothing here needs inbound internet access.
 - This is a reflash-free project: stock Android/Linux on Portal hardware isn't possible, and isn't needed.
